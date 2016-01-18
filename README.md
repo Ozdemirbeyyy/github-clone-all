@@ -1,2 +1,8 @@
 # github-clone-all
-A python script to clone all repositories from a user
+
+Clones all the repositories from a GitHub user
+
+## Usage
+`python github-clone-all.py <user> [path]`
+
+`python github-clone-all.py egeldenhuys ~/My Repos/`
