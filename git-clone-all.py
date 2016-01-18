@@ -23,8 +23,18 @@ print "Current Working Directory: %s " % path
 
 print "Fetching user repos from %s ..." % user
 req = urllib2.Request("https://api.github.com/users/%s/repos" % user)
-response = urllib2.urlopen(req)
-json_data = response.read()
+
+try: 
+    response = urllib2.urlopen(req)
+except urllib2.HTTPError as e:
+    print "HTTP Error: %i" % e.code
+    print "User probably does not exist"
+    sys.exit(1)
+except urllib2.URLError as e:
+    print e.reason
+    sys.exit(1)
+else:
+    json_data = response.read()
 
 data = json.loads(json_data)
 
