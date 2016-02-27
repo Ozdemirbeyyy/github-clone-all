@@ -1,6 +1,6 @@
 # github-clone-all
 
-A python script to clone all the repositories of a given user if they are the owner.
+A python script to clone all public repositories of a given user if they are the owner.
 
 ## Usage
 `python github-clone-all.py <user name> [path]`
